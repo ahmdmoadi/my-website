@@ -4,10 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WELCOME</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+        *,
+        *::before,
+        *::after {
+            font-family: Poppins;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #ar-title {
+         display: none;
+        }
+        #en-title h1,
+        #ar-title h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     
+    <label for="lang">Choose Language:</label>
+    <select id="lang">
+        <option value="en">English</option>
+        <option value="ar">
+        عربي
+        </option>
+    </select>
+    <div id="en-title">
     <h1>test website</h1>
-
+    <p>this website is only valid for one year.</p>
+    <p>click <a href="https://ahmdmoadi.github.io/my-website/">here</a>for the static website</p>
+    
+    <div id="ar-title">
+    <p>
+       هذا الموقع صالح لمدة سنة فقط. اضغط 
+    <p>
+    <a href="https://ahmdmoadi.github.io/my-website/">
+        هنا
+    </a>
+    <p>
+        لنسخة ثابتة
+    </p>
+    </div>
+    <script>
+    let langoption = document.getElementById("lang");
+    let ar_content = document.getElementById("ar-title");
+    let en_content = document.getElementById("en-title");
+        
+    langoption.addEventListener("change",() => {
+        if(langoption == "en") {
+            en_content.style.display = "block";
+            ar_content.style.display = "none";
+        } else {
+            en_content.style.display = "none";
+            ar_content.style.display = "block";
+        }
+    </script>
+    
 </body>
 </html>
